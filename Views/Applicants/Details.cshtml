@@ -1,0 +1,93 @@
+﻿@model SMS_PROJECT.Models.Applicant
+@using SMS_PROJECT.Authorization
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Identity.EntityFrameworkCore
+@using Microsoft.EntityFrameworkCore
+@using static SMS_PROJECT.Models.Enum
+@inject IAuthorizationService AuthorizationService
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Applicant</h4>
+    <hr />
+    <dl class="row">
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OtherName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OtherName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        
+    </dl>
+</div>
+
+@{
+    
+  var isAuthorized = await AuthorizationService.AuthorizeAsync(
+				User, Model, ApplicationOperations.Declined);
+
+	@if (isAuthorized.Succeeded)
+	{
+		@if (Model.Status != ApplicationStatus.Approved)
+		{
+			<form style="display:inline;" method="post">
+				<input hidden name="id" value="@Model.id">
+				<input hidden name="status" value="@ApplicationStatus.Approved">
+				<button type="submit" class="btn btn-xs btn-success">Approve</button>
+			</form>
+		}
+
+		@if (Model.Status != ApplicationStatus.Declined)
+		{
+			<form style="display:inline;" method="post">
+				<input hidden name="id" value="@Model.id">
+				<input hidden name="status" value="@ApplicationStatus.Declined">
+				<button type="submit" class="btn btn-xs btn-danger">Decline</button>
+			</form>
+		}
+	}
+}
+
+<div>
+    @if(isAuthorized.Succeeded==false)
+    {
+      <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> 
+    }
+    <a asp-action="Index">Back to List</a>
+</div>
