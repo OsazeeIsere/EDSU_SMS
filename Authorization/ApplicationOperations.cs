@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization.Infrastructure;
 
-namespace SMS_PROJECT.Authorization
+namespace EDSU_SMS.Authorization
 {
     public class ApplicationOperations
     {

@@ -1,4 +1,4 @@
-﻿namespace SMS_PROJECT.Models
+﻿namespace EDSU_SMS.Models
 {
     public class Enum
     {

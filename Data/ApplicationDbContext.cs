@@ -9,5 +9,8 @@ namespace EDSU_SMS.Data
             : base(options)
         {
         }
+
+        public DbSet<EDSU_SMS.Models.Applicant> Applicant { get; set; }
+
     }
 }

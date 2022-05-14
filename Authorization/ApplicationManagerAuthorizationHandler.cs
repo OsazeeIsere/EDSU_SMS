@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
-using SMS_PROJECT.Models;
+using EDSU_SMS.Models;
 
-namespace SMS_PROJECT.Authorization
+namespace EDSU_SMS.Authorization
 {
     public class ApplicationManagerAuthorizationHandler
         : AuthorizationHandler<OperationAuthorizationRequirement, Applicant>

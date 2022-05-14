@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using SMS_PROJECT.Data;
-using SMS_PROJECT.Models;
+using EDSU_SMS.Data;
+using EDSU_SMS.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Identity;
-using SMS_PROJECT.Views.Applicants;
-using SMS_PROJECT.Authorization;
-using static SMS_PROJECT.Models.Enum;
-using EDSU_SMS.Data;
+using EDSU_SMS.Views.Applicants;
+using EDSU_SMS.Authorization;
+using static EDSU_SMS.Models.Enum;
 
-namespace SMS_PROJECT.Controllers
+namespace EDSU_SMS.Controllers
 {
     public class ApplicantsController : DI_BaseViewModel
     {

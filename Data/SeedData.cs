@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SMS_PROJECT.Authorization;
+using EDSU_SMS.Authorization;
 
-namespace SMS_PROJECT.Data
+namespace EDSU_SMS.Data
 {
     public class SeedData
     {

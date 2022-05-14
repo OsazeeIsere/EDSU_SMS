@@ -1,7 +1,7 @@
 ﻿
-using static SMS_PROJECT.Models.Enum;
+using static EDSU_SMS.Models.Enum;
 
-namespace SMS_PROJECT.Models
+namespace EDSU_SMS.Models
 {
     
     public class Applicant

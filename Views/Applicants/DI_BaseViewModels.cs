@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using SMS_PROJECT.Data;
+using EDSU_SMS.Data;
 
-namespace SMS_PROJECT.Views.Applicants
+namespace EDSU_SMS.Views.Applicants
 {
     public class DI_BaseViewModel : Controller
     {
