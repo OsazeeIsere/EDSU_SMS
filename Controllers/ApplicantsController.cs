@@ -105,6 +105,7 @@ namespace EDSU_SMS.Controllers
 
             applicant.Status = status;
             Context.Applicant.Update(applicant);
+            //Context.Students.Add((Student)applicant);
 
             await Context.SaveChangesAsync();
 
@@ -188,38 +189,55 @@ namespace EDSU_SMS.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,UserId,LastName,OtherName,Email,Phone")] Applicant applicant)
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id != applicant.id)
+            var applicants = await Context.Applicant.FindAsync(id);
+
+            if (id ==null)
             {
                 return NotFound();
             }
-            applicant.UserId = UserManager.GetUserId(User);
-            var applicants = await Context.Applicant.FindAsync(id);
+            applicants.UserId = UserManager.GetUserId(User);
             try
             {
-                    var isAuthorized = await AuthorizationService.AuthorizeAsync(User, applicant, ApplicationOperations.Update);
-                    if (isAuthorized.Succeeded == false)
-                        return Forbid();
-                    Context.Update(applicant);
-                    await Context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ApplicantExists(applicant.id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            
-            return View(applicant);
-        }
+                var isAuthorized = await AuthorizationService.AuthorizeAsync(User, applicants, ApplicationOperations.Update);
+                if (isAuthorized.Succeeded == false)
+                    return Forbid();
 
+
+                var ApplicatantToUpdate = await Context.Applicant
+            .FirstOrDefaultAsync(c => c.id == id);
+
+                if (await TryUpdateModelAsync<Applicant>(ApplicatantToUpdate, "", c => c.LastName))
+                {
+                    try
+                    {
+                        await Context.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+
+                        //Log the error (uncomment ex variable name and write a log.)
+                        ModelState.AddModelError("", "Unable to save changes. " +
+                            "Try again, and if the problem persists, " +
+                            "see your system administrator.");
+                    }
+                    return RedirectToAction(nameof(Index));
+                }
+
+
+
+                //Context.Update(applicant);
+                //await Context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+
+            }
+            return View();
+
+        }
         // GET: Applicants/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
