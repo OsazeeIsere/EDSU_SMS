@@ -4,6 +4,7 @@ using EDSU_SMS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,13 +12,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EDSU_SMS.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220519144904_MainMigration")]
+    partial class MainMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.5")
+                .HasAnnotation("ProductVersion", "6.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -42,9 +44,6 @@ namespace EDSU_SMS.Data.Migrations
                     b.Property<DateTime>("DOB")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("DirectEntryUpload")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
@@ -61,9 +60,6 @@ namespace EDSU_SMS.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LGA")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LGAUpload")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MaritalStatus")
@@ -276,9 +272,6 @@ namespace EDSU_SMS.Data.Migrations
                     b.Property<string>("ThirdChoice")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UTEMTotal")
-                        .HasColumnType("int");
-
                     b.Property<string>("UTMESubject1")
                         .HasColumnType("nvarchar(max)");
 
@@ -304,6 +297,7 @@ namespace EDSU_SMS.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");

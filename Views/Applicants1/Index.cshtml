@@ -1,0 +1,563 @@
+﻿@model IEnumerable<EDSU_SMS.Models.Applicant>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OtherName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaritalStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlaceOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PermanentHomeAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nationality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StateOfOrigin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LGA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrimarySchool)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondarySchool)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Indigine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModeOfEntry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PreviousInstitution)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PreviousLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PreviousGrade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseChoseInJamb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UTMESubject1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UTMESubject2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UTMESubject3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UTMESubject4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UTMESubject1Score)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UTMESubject2Score)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UTMESubject3Score)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UTMESubject4Score)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstChoice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondChoice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThirdChoice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfSittings)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject8)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject9)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject1Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject2Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject3Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject4Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject5Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject6Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject7Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject8Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1Subject9Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject8)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject9)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject1Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject2Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject3Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject4Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject5Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject6Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject7Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject8Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2Subject9Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentPhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentAlternatePhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentOccupation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Passport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jamb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ssce2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthCertificate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OtherName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaritalStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaceOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PermanentHomeAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nationality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StateOfOrigin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LGA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimarySchool)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondarySchool)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Indigine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModeOfEntry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreviousInstitution)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreviousLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreviousGrade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseChoseInJamb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UTMESubject1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UTMESubject2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UTMESubject3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UTMESubject4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UTMESubject1Score)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UTMESubject2Score)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UTMESubject3Score)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UTMESubject4Score)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstChoice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondChoice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThirdChoice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfSittings)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject8)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject9)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject1Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject2Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject3Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject4Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject5Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject6Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject7Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject8Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1Subject9Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject8)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject9)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject1Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject2Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject3Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject4Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject5Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject6Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject7Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject8Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2Subject9Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentPhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentAlternatePhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentOccupation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Passport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jamb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ssce2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthCertificate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

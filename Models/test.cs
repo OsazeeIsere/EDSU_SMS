@@ -1,19 +1,15 @@
-﻿
-using System.ComponentModel.DataAnnotations;
-using static EDSU_SMS.Models.Enum;
-
+﻿using static EDSU_SMS.Models.Enum;
 namespace EDSU_SMS.Models
 {
-    
-    public class Applicant
+    public class test
     {
-        public int id { get; set; }
-        public string? UserId { get; set; }
+        //Page 1
+        public int Id { get; set; } 
         public string? Surname { get; set; }
         public string? FirstName { get; set; }
         public string? OtherName { get; set; }
         public string? Sex { get; set; }
-        public DateTime DOB { get; set; }
+        public DateOnly DOB { get; set; }
         public string? MaritalStatus { get; set; }
         public string? PlaceOfBirth { get; set; }
         public string? ContactAddress { get; set; }
@@ -30,7 +26,6 @@ namespace EDSU_SMS.Models
         public string? PreviousInstitution { get; set; }
         public string? PreviousLevel { get; set; }
         public string? PreviousGrade { get; set; }
-        
         public ApplicationStatus Status { get; set; }
         //Second Page
         /// <summary>
@@ -45,7 +40,6 @@ namespace EDSU_SMS.Models
         public int UTMESubject2Score { get; set; }
         public int UTMESubject3Score { get; set; }
         public int UTMESubject4Score { get; set; }
-        public int UTEMTotal { get; set; }
 
         /// <summary>
         /// //Choice of course of study
@@ -61,7 +55,7 @@ namespace EDSU_SMS.Models
         /// </summary>
         public int NoOfSittings { get; set; }
         public string? Ssce1Type { get; set; }
-        public DateTime Ssce1Year { get; set; }
+        public DateOnly Ssce1Year { get; set; }
         public string? Ssce1Number { get; set; }
         public string? Ssce1Subject1 { get; set; }
         public string? Ssce1Subject2 { get; set; }
@@ -85,7 +79,7 @@ namespace EDSU_SMS.Models
         public int Ssce1Subject9Grade { get; set; }
 
         public string? Ssce2Type { get; set; }
-        public DateTime Ssce2Year { get; set; }
+        public DateOnly Ssce2Year { get; set; }
         public string? Ssce2Number { get; set; }
         public string? Ssce2Subject1 { get; set; }
         public string? Ssce2Subject2 { get; set; }
@@ -128,10 +122,5 @@ namespace EDSU_SMS.Models
         public string? Ssce1 { get; set; }
         public string? Ssce2 { get; set; }
         public string? BirthCertificate { get; set; }
-        public string? DirectEntryUpload { get; set; }
-        public string? LGAUpload { get; set; }
-
     }
-
-    
 }
