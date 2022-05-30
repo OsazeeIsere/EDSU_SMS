@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using EDSU_SMS.Data;
 
 namespace EDSU_SMS.Views.Applicants
 {

@@ -30,7 +30,7 @@ namespace EDSU_SMS.Controllers
         // GET: Applicants
         public async Task<IActionResult> Index()
         {
-            var applicants = from i in Context.Applicant
+            var applicants = from i in  Context.Applicant
                            select i;
 
 
@@ -158,7 +158,7 @@ namespace EDSU_SMS.Controllers
             await Context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
             
-              return View(applicant);
+              //return View(applicant);
         }
 
         // GET: Applicants/Edit/5
@@ -238,6 +238,28 @@ namespace EDSU_SMS.Controllers
             return View();
 
         }
+        // Get: Applicants/Edit
+        public async Task<IActionResult> Edit1()
+        {
+            //if (id == null || _context.Courses == null)
+            //{
+            //    return NotFound();
+            //}
+
+            //var course = await _context.Courses.FindAsync(id);
+            //if (course == null)
+            //{
+            //    return NotFound();
+            //}
+            List<SsceSubjects> Ssce = new List<SsceSubjects>();
+            Ssce = (from c in Context.SsceSubjects select c).ToList();
+            ViewBag.message1 = Ssce;
+            List<SSCEGrade> Grades = new List<SSCEGrade>();
+            Grades = (from c in Context.SSCEGrade select c).ToList();
+            ViewBag.message2 = Grades;
+            return View();
+        }
+
         // GET: Applicants/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
