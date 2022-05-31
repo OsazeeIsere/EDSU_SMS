@@ -725,105 +725,80 @@
                                                 <h6>Awaiting Result Candidate can now apply by selecting (AR as grade)</h6>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                            <div class="form-group">
+                                                                <select asp-for="Ssce2Subject1" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
                                                                 <option value="">Subject 1</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
-                                                            <div class="valid-feedback">Example valid custom select feedback</div>
-                                                            <div class="invalid-feedback">
-                                                                Please Select the field
+                                                                </select>
+                                                                <span asp-validation-for="Ssce2Subject1" class="text-danger"></span>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                            @*<div class="form-group">
+                                                                <select asp-for="Ssce1Subject1Grade" class="form-control" asp-items="@(new SelectList()">
                                                                 <option value="">Grade</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
-                                                            <div class="valid-feedback">Example valid custom select feedback</div>
-                                                            <div class="invalid-feedback">
-                                                                Please Select the field
-                                                            </div>
+                                                                </select>
+                                                                <span asp-validation-for="Ssce1Subject1Grade" class="text-danger"></span>
+                                                            </div>*@
+                                                             <select asp-for="Ssce2Subject1Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                                <option value="">Grade</option>
+                                                                </select>
                                                         </div>
                                                         
                                                     </div>
-                                                    <div class="form-row">
+                                                   <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                            <div class="form-group">
+                                                               <select asp-for="Ssce2Subject2" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
                                                                 <option value="">Subject 2</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
-                                                            <div class="valid-feedback">Example valid custom select feedback</div>
-                                                            <div class="invalid-feedback">
-                                                                Please Select the field
+                                                               </select>
+                                                                <span asp-validation-for="Ssce2Subject2" class="text-danger"></span>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                            <div class="form-group">
+                                                                <select asp-for="Ssce2Subject2Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
-                                                            <div class="valid-feedback">Example valid custom select feedback</div>
-                                                            <div class="invalid-feedback">
-                                                                Please Select the field
+                                                                </select>
+                                                                <span asp-validation-for="Ssce2Subject2Grade" class="text-danger"></span>
                                                             </div>
                                                         </div>
                                                         
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                            <div class="form-group">
+                                                                @*<label asp-for="UTMESubject1" class="control-label"></label>*@
+                                                               <select asp-for="Ssce2Subject3" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
                                                                 <option value="">Subject 3</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
-                                                            <div class="valid-feedback">Example valid custom select feedback</div>
-                                                            <div class="invalid-feedback">
-                                                                Please Select the field
+                                                               </select>
+                                                                <span asp-validation-for="Ssce2Subject3" class="text-danger"></span>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                            <div class="form-group">
+                                                                @*<label asp-for="UTMESubject1" class="control-label"></label>*@
+                                                                <select asp-for="Ssce2Subject3Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
-                                                            <div class="valid-feedback">Example valid custom select feedback</div>
-                                                            <div class="invalid-feedback">
-                                                                Please Select the field
+                                                                </select>
+                                                                <span asp-validation-for="Ssce2Subject3Grade" class="text-danger"></span>
                                                             </div>
                                                         </div>
                                                         
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                            <select asp-for="Ssce2Subject4" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
                                                                 <option value="">Subject 4</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
+                                                               </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
                                                             <div class="invalid-feedback">
                                                                 Please Select the field
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                           <select asp-for="Ssce2Subject4Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
+                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
                                                             <div class="invalid-feedback">
                                                                 Please Select the field
@@ -833,24 +808,18 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                           <select asp-for="Ssce2Subject5" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
                                                                 <option value="">Subject 5</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
+                                                               </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
                                                             <div class="invalid-feedback">
                                                                 Please Select the field
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                           <select asp-for="Ssce2Subject5Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
+                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
                                                             <div class="invalid-feedback">
                                                                 Please Select the field
@@ -860,24 +829,18 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                           <select asp-for="Ssce2Subject6" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
                                                                 <option value="">Subject 6</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
+                                                               </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
                                                             <div class="invalid-feedback">
                                                                 Please Select the field
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                            <select asp-for="Ssce2Subject6Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
+                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
                                                             <div class="invalid-feedback">
                                                                 Please Select the field
@@ -887,24 +850,18 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                           <select asp-for="Ssce2Subject7" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
                                                                 <option value="">Subject 7</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
+                                                               </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
                                                             <div class="invalid-feedback">
                                                                 Please Select the field
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                           <select asp-for="Ssce2Subject7Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
+                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
                                                             <div class="invalid-feedback">
                                                                 Please Select the field
@@ -914,24 +871,18 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                           <select asp-for="Ssce2Subject8" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
                                                                 <option value="">Subject 8</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
+                                                               </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
                                                             <div class="invalid-feedback">
                                                                 Please Select the field
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                           <select asp-for="Ssce2Subject8Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
+                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
                                                             <div class="invalid-feedback">
                                                                 Please Select the field
@@ -941,24 +892,18 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                            <select asp-for="Ssce2Subject9" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
                                                                 <option value="">Subject 9</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
+                                                               </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
                                                             <div class="invalid-feedback">
                                                                 Please Select the field
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                            <select class="custom-select form-control" required>
+                                                            <select asp-for="Ssce2Subject9Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
-                                                            </select>
+                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
                                                             <div class="invalid-feedback">
                                                                 Please Select the field
