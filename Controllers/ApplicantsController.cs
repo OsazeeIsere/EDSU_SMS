@@ -178,6 +178,13 @@ namespace EDSU_SMS.Controllers
             if (isAuthorized.Succeeded == false)
                 return Forbid();
 
+            List<SsceSubjects> Ssce = new ();
+            Ssce = (from c in Context.SsceSubjects select c).ToList();
+            ViewBag.message1 = Ssce;
+            List<Department> Dept = new();
+            Dept = (from c in Context.Departments select c).ToList();
+            ViewBag.message2 = Dept;
+
             if (applicants.Status.ToString() != "Pending")
                 return Forbid();
 
@@ -208,7 +215,9 @@ namespace EDSU_SMS.Controllers
                 var ApplicatantToUpdate = await Context.Applicant
             .FirstOrDefaultAsync(c => c.id == id);
 
-                if (await TryUpdateModelAsync<Applicant>(ApplicatantToUpdate, "", c => c.UTMESubject1, c=>c.UTMESubject1Score, c=>c.UTMESubject2, c=>c.UTMESubject2Score, c=>c.UTMESubject3, c=>c.UTMESubject3Score, c=>c.UTMESubject4, c=>c.UTMESubject4Score, c=>c.FirstChoice, c => c.SecondChoice, c => c.ThirdChoice))
+                if (await TryUpdateModelAsync<Applicant>(ApplicatantToUpdate, "", c => c.UTMESubject1, c=>c.UTMESubject1Score,
+                    c=>c.UTMESubject2, c=>c.UTMESubject2Score, c=>c.UTMESubject3, c=>c.UTMESubject3Score, 
+                    c=>c.UTMESubject4, c=>c.UTMESubject4Score, c=>c.FirstChoice, c => c.SecondChoice, c => c.ThirdChoice))
                 {
                     try
                     {
@@ -239,26 +248,101 @@ namespace EDSU_SMS.Controllers
 
         }
         // Get: Applicants/Edit
-        public async Task<IActionResult> Edit1()
+        // GET: Applicants/Edit/5
+        public async Task<IActionResult> Step(int? id)
         {
-            //if (id == null || _context.Courses == null)
-            //{
-            //    return NotFound();
-            //}
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-            //var course = await _context.Courses.FindAsync(id);
-            //if (course == null)
-            //{
-            //    return NotFound();
-            //}
-            List<SsceSubjects> Ssce = new List<SsceSubjects>();
+            var applicants = await Context.Applicant.FindAsync(id);
+            if (applicants == null)
+            {
+                return NotFound();
+            }
+            var isAuthorized = await AuthorizationService.AuthorizeAsync(User, applicants, ApplicationOperations.Update);
+            if (isAuthorized.Succeeded == false)
+                return Forbid();
+
+            List<SsceSubjects> Ssce = new();
             Ssce = (from c in Context.SsceSubjects select c).ToList();
             ViewBag.message1 = Ssce;
-            List<SSCEGrade> Grades = new List<SSCEGrade>();
-            Grades = (from c in Context.SSCEGrade select c).ToList();
-            ViewBag.message2 = Grades;
-            return View();
+            List<SSCEGrade> Grade = new();
+            Grade = (from c in Context.SSCEGrade select c).ToList();
+            ViewBag.message2 = Grade;
+
+            if (applicants.Status.ToString() != "Pending")
+                return Forbid();
+
+            return View(applicants);
         }
+
+        // POST: Applicants/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Step(int id)
+        {
+            var applicants = await Context.Applicant.FindAsync(id);
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+            applicants.UserId = UserManager.GetUserId(User);
+            try
+            {
+                var isAuthorized = await AuthorizationService.AuthorizeAsync(User, applicants, ApplicationOperations.Update);
+                if (isAuthorized.Succeeded == false)
+                    return Forbid();
+
+
+                var ApplicatantToUpdate = await Context.Applicant
+            .FirstOrDefaultAsync(c => c.id == id);
+
+                if (await TryUpdateModelAsync<Applicant>(ApplicatantToUpdate, "",c=>c.NoOfSittings, c => c.Ssce1Type, c => c.Ssce1Year,
+                    c => c.Ssce1Number, c => c.Ssce1Subject1, c => c.Ssce1Subject1Grade, c => c.Ssce1Subject2, c => c.Ssce1Subject2Grade,
+                    c => c.Ssce1Subject3, c => c.Ssce1Subject3Grade, c => c.Ssce1Subject4, c => c.Ssce1Subject4Grade, c => c.Ssce1Subject5,
+                    c => c.Ssce1Subject5Grade, c => c.Ssce1Subject6, c => c.Ssce1Subject6Grade, c => c.Ssce1Subject7,
+                    c => c.Ssce1Subject7Grade, c => c.Ssce1Subject8, c => c.Ssce1Subject8Grade, c => c.Ssce1Subject9, c => c.Ssce1Subject9Grade))
+                //, c => c.Ssce2Type, c => c.Ssce2Year,
+                //c => c.Ssce2Number, c => c.Ssce2Subject1, c => c.Ssce2Subject1Grade, c => c.Ssce2Subject2, c => c.Ssce2Subject2Grade,
+                //c => c.Ssce2Subject3, c => c.Ssce2Subject3Grade, c => c.Ssce2Subject4, c => c.Ssce2Subject4Grade, c => c.Ssce2Subject5,
+                //c => c.Ssce2Subject5Grade, c => c.Ssce2Subject6, c => c.Ssce2Subject6Grade, c => c.Ssce2Subject7,
+                //c => c.Ssce2Subject7Grade, c => c.Ssce2Subject8, c => c.Ssce2Subject8Grade, c => c.Ssce2Subject9, c => c.Ssce2Subject9Grade
+                {
+
+                    try
+                    {
+                        await Context.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+
+                        //Log the error (uncomment ex variable name and write a log.)
+                        ModelState.AddModelError("", "Unable to save changes. " +
+                            "Try again, and if the problem persists, " +
+                            "see your system administrator.");
+                    }
+                    return RedirectToAction(nameof(Index));
+                }
+
+
+
+                //Context.Update(applicant);
+                //await Context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+
+            }
+            return View();
+
+        }
+        
 
         // GET: Applicants/Delete/5
         public async Task<IActionResult> Delete(int? id)

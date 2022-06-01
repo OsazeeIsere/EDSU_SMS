@@ -10,11 +10,11 @@ namespace EDSU_SMS.Models
 
         [StringLength(50)]
         [Column(TypeName = "varchar")]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         [Key]
 
-        public string Code { get; set; }
+        public string? Code { get; set; }
 
 
         public int Id { get; set; }
@@ -24,13 +24,14 @@ namespace EDSU_SMS.Models
 
         [StringLength(2000)]
         [Column(TypeName = "varchar")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         public int CreditUnit { get; set; }
 
-        public string Status { get; set; }
+        public string? Status { get; set; }
 
-        public Department Departments { get; set; }
+
+        public Department? Departments { get; set; }
 
 
     }

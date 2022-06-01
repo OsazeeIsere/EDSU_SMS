@@ -500,49 +500,58 @@
                                                     <div class="row layout-top-spacing">
                                                             
                                                         <div class="col-xl-8 col-lg-8 col-md-8 col-8 layout-spacing">
-                                                            <div class="form-row mb-4">
-                                                                <select class="custom-select form-control" required>
-                                                                <option value="">English</option>
-                                                                </select>
-                                                                
+                                                            <div class="form-group">
+                                                               <select asp-for="UTMESubject1" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                                <option value="">Subject 1</option>
+                                                               </select>
+                                                                <span asp-validation-for="UTMESubject1" class="text-danger"></span>
                                                             </div>
-                                                            <div class="form-row mb-4">
-                                                                <select class="custom-select form-control" required>
-                                                                <option value="">English</option>
-                                                                </select>
-                                                                
+                                                           <div class="form-group">
+                                                               <select asp-for="UTMESubject2" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                                <option value="">Subject 2</option>
+                                                               </select>
+                                                                <span asp-validation-for="UTMESubject2" class="text-danger"></span>
                                                             </div>
-                                                            <div class="form-row mb-4">
-                                                                <select class="custom-select form-control" required>
-                                                                <option value="">English</option>
-                                                                </select>
-                                                                
+                                                           <div class="form-group">
+                                                               <select asp-for="UTMESubject3" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                                <option value="">Subject 3</option>
+                                                               </select>
+                                                                <span asp-validation-for="UTMESubject3" class="text-danger"></span>
                                                             </div>
-                                                            <div class="form-row mb-4">
-                                                                <select class="custom-select form-control" required>
-                                                                <option value="">English</option>
-                                                                </select>
-                                                                
+                                                            <div class="form-group">
+                                                               <select asp-for="UTMESubject4" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                                <option value="">Subject 4</option>
+                                                               </select>
+                                                                <span asp-validation-for="UTMESubject4" class="text-danger"></span>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-xl-4 col-lg-4 col-md-4 col-4 layout-spacing">
-                                                            <div class="form-row mb-3">
-                                                                <input type="text" class="form-control" id="validationCustom02" placeholder="Score" value="" required>
-                                                                
+                                                        
+                                                            <div class="form-group">
+                                                                @*<label asp-for="UTMESubject1Score" class="control-label"></label>*@
+                                                                <input asp-for="UTMESubject1Score" class="form-control" />
+                                                                <span asp-validation-for="UTMESubject1Score" class="text-danger"></span>
                                                             </div>
-                                                            <div class="form-row mb-3">
-                                                                <input type="text" class="form-control" id="validationCustom02" placeholder="Score" value="" required>
-                                                                
+                                                       
+                                                            <div class="form-group">
+                                                                @*<label asp-for="UTMESubject1Score" class="control-label"></label>*@
+                                                                <input asp-for="UTMESubject2Score" class="form-control" />
+                                                                <span asp-validation-for="UTMESubject2Score" class="text-danger"></span>
                                                             </div>
-                                                            <div class="form-row mb-4">
-                                                                <input type="text" class="form-control" id="validationCustom02" placeholder="Score" value="" required>
-                                                                
+                                                        
+                                                            <div class="form-group">
+                                                                @*<label asp-for="UTMESubject1Score" class="control-label"></label>*@
+                                                                <input asp-for="UTMESubject3Score" class="form-control" />
+                                                                <span asp-validation-for="UTMESubject3Score" class="text-danger"></span>
                                                             </div>
-                                                            <div class="form-row mb-3">
-                                                                <input type="text" class="form-control" id="validationCustom02" placeholder="Score" value="" required>
-                                                                
+                                                        
+                                                            <div class="form-group">
+                                                                @*<label asp-for="UTMESubject1Score" class="control-label"></label>*@
+                                                                <input asp-for="UTMESubject4Score" class="form-control" />
+                                                                <span asp-validation-for="UTMESubject4Score" class="text-danger"></span>
                                                             </div>
+                                                      
                                                         </div>
                                                     </div>
                                                 </div>
@@ -554,32 +563,23 @@
                                                 <div class="widget-one">
                                                     <div class="layout-top-spacing">
                                                         <h5 class="text-center">Choice of Course of Study</h5>
-                                                    <div class="form-row mb-4">
-                                                        <select class="custom-select form-control" required>
-                                                        <option value="">1st choice</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                    <div class="form-group">
+                                                        <select asp-for="FirstChoice" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Name"))">
+                                                        <option value="">First Choice</option>
                                                         </select>
-                                                        
+                                                        <span asp-validation-for="FirstChoice" class="text-danger"></span>
                                                     </div>
-                                                    <div class="form-row mb-4">
-                                                        <select class="custom-select form-control" required>
-                                                        <option value="">2nd choice</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                     <div class="form-group">
+                                                        <select asp-for="SecondChoice" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Name"))">
+                                                        <option value="">Second Choice</option>
                                                         </select>
-                                                        
+                                                        <span asp-validation-for="SecondChoice" class="text-danger"></span>
                                                     </div>
-                                                    <div class="form-row mb-4">
-                                                        <select class="custom-select form-control" required>
-                                                        <option value="">3rd choice</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                     <div class="form-group">
+                                                        <select asp-for="ThirdChoice" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Name"))">
+                                                        <option value="">Third Choice</option>
                                                         </select>
-                                                        
+                                                        <span asp-validation-for="ThirdChoice" class="text-danger"></span>
                                                     </div>
                                                     <div class="form-row mb-4">
                                                         <button class="btn btn-primary" type="submit">Next</button>

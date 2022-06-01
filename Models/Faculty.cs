@@ -10,7 +10,7 @@ namespace EDSU_SMS.Models
 
         [StringLength(40)]
         [Column(TypeName = "varchar")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         
        

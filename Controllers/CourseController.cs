@@ -66,7 +66,7 @@ namespace EDSU_SMS.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title,Code,Id,Description,CreditUnit,Status")] Course course)
+        public async Task<IActionResult> Create([Bind("Title,Code,Id,DepartmentId,Description,CreditUnit,Status")] Course course)
         {
             if (ModelState.IsValid)
             {
