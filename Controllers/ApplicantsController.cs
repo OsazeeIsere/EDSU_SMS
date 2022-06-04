@@ -200,7 +200,7 @@ namespace EDSU_SMS.Controllers
         {
             var applicants = await Context.Applicant.FindAsync(id);
 
-            if (id ==null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -213,7 +213,7 @@ namespace EDSU_SMS.Controllers
 
 
                 var ApplicatantToUpdate = await Context.Applicant
-            .FirstOrDefaultAsync(c => c.id == id);
+                .FirstOrDefaultAsync(c => c.id == id);
 
                 if (await TryUpdateModelAsync<Applicant>(ApplicatantToUpdate, "", c => c.UTMESubject1, c=>c.UTMESubject1Score,
                     c=>c.UTMESubject2, c=>c.UTMESubject2Score, c=>c.UTMESubject3, c=>c.UTMESubject3Score, 
@@ -247,9 +247,9 @@ namespace EDSU_SMS.Controllers
             return View();
 
         }
-        // Get: Applicants/Edit
+
         // GET: Applicants/Edit/5
-        public async Task<IActionResult> Step(int? id)
+        public async Task<IActionResult> Step33(int? id)
         {
             if (id == null)
             {
@@ -267,10 +267,10 @@ namespace EDSU_SMS.Controllers
 
             List<SsceSubjects> Ssce = new();
             Ssce = (from c in Context.SsceSubjects select c).ToList();
-            ViewBag.message1 = Ssce;
-            List<SSCEGrade> Grade = new();
-            Grade = (from c in Context.SSCEGrade select c).ToList();
-            ViewBag.message2 = Grade;
+            ViewBag.message3 = Ssce;
+            List<SSCEGrade> grade = new();
+            grade = (from c in Context.SSCEGrade select c).ToList();
+            ViewBag.message4 = grade;
 
             if (applicants.Status.ToString() != "Pending")
                 return Forbid();
@@ -283,7 +283,7 @@ namespace EDSU_SMS.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Step(int id)
+        public async Task<IActionResult> Step33(int id)
         {
             var applicants = await Context.Applicant.FindAsync(id);
 
@@ -300,20 +300,20 @@ namespace EDSU_SMS.Controllers
 
 
                 var ApplicatantToUpdate = await Context.Applicant
-            .FirstOrDefaultAsync(c => c.id == id);
+                .FirstOrDefaultAsync(c => c.id == id);
 
-                if (await TryUpdateModelAsync<Applicant>(ApplicatantToUpdate, "",c=>c.NoOfSittings, c => c.Ssce1Type, c => c.Ssce1Year,
-                    c => c.Ssce1Number, c => c.Ssce1Subject1, c => c.Ssce1Subject1Grade, c => c.Ssce1Subject2, c => c.Ssce1Subject2Grade,
-                    c => c.Ssce1Subject3, c => c.Ssce1Subject3Grade, c => c.Ssce1Subject4, c => c.Ssce1Subject4Grade, c => c.Ssce1Subject5,
-                    c => c.Ssce1Subject5Grade, c => c.Ssce1Subject6, c => c.Ssce1Subject6Grade, c => c.Ssce1Subject7,
-                    c => c.Ssce1Subject7Grade, c => c.Ssce1Subject8, c => c.Ssce1Subject8Grade, c => c.Ssce1Subject9, c => c.Ssce1Subject9Grade))
-                //, c => c.Ssce2Type, c => c.Ssce2Year,
-                //c => c.Ssce2Number, c => c.Ssce2Subject1, c => c.Ssce2Subject1Grade, c => c.Ssce2Subject2, c => c.Ssce2Subject2Grade,
-                //c => c.Ssce2Subject3, c => c.Ssce2Subject3Grade, c => c.Ssce2Subject4, c => c.Ssce2Subject4Grade, c => c.Ssce2Subject5,
-                //c => c.Ssce2Subject5Grade, c => c.Ssce2Subject6, c => c.Ssce2Subject6Grade, c => c.Ssce2Subject7,
-                //c => c.Ssce2Subject7Grade, c => c.Ssce2Subject8, c => c.Ssce2Subject8Grade, c => c.Ssce2Subject9, c => c.Ssce2Subject9Grade
+                if (await TryUpdateModelAsync<Applicant>(ApplicatantToUpdate, "", c => c.NoOfSittings, c => c.Ssce1Type,
+                    c => c.Ssce1Year, c => c.Ssce1Number, c => c.Ssce1Subject1, c => c.Ssce1Subject1Grade, c => c.Ssce1Subject2,
+                    c => c.Ssce1Subject2Grade, c => c.Ssce1Subject3, c => c.Ssce1Subject3Grade, c => c.Ssce1Subject4,
+                    c => c.Ssce1Subject4Grade, c => c.Ssce1Subject5, c => c.Ssce1Subject5Grade, c => c.Ssce1Subject6,
+                    c => c.Ssce1Subject6Grade, c => c.Ssce1Subject7, c => c.Ssce1Subject7Grade, c => c.Ssce1Subject8,
+                    c => c.Ssce1Subject8Grade, c => c.Ssce1Subject9, c => c.Ssce1Subject9Grade, c => c.Ssce2Type,
+                    c => c.Ssce2Year, c => c.Ssce2Number, c => c.Ssce2Subject1, c => c.Ssce2Subject1Grade, c => c.Ssce2Subject2,
+                    c => c.Ssce2Subject2Grade, c => c.Ssce2Subject3, c => c.Ssce2Subject3Grade, c => c.Ssce2Subject4,
+                    c => c.Ssce2Subject4Grade, c => c.Ssce2Subject5, c => c.Ssce2Subject5Grade, c => c.Ssce2Subject6,
+                    c => c.Ssce2Subject6Grade, c => c.Ssce2Subject7, c => c.Ssce2Subject7Grade, c => c.Ssce2Subject8,
+                    c => c.Ssce2Subject8Grade, c => c.Ssce2Subject9, c => c.Ssce2Subject9Grade))
                 {
-
                     try
                     {
                         await Context.SaveChangesAsync();
@@ -342,7 +342,151 @@ namespace EDSU_SMS.Controllers
             return View();
 
         }
-        
+
+
+        // GET: Applicants/Edit/Parent Guardian Information Page
+        public async Task<IActionResult> Step3(int? id)
+        {
+            if (id == null || Context.Applicant == null)
+            {
+                return NotFound();
+            }
+
+            var applicant = await Context.Applicant.FindAsync(id);
+            if (applicant == null)
+            {
+                return NotFound();
+            }
+            return View(applicant);
+        }
+
+        // POST: Applicants1/Edit/Parent Guardian Information Page
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Step3(int id) {
+            var applicants = await Context.Applicant.FindAsync(id);
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+            applicants.UserId = UserManager.GetUserId(User);
+            try
+            {
+                var isAuthorized = await AuthorizationService.AuthorizeAsync(User, applicants, ApplicationOperations.Update);
+                if (isAuthorized.Succeeded == false)
+                    return Forbid();
+
+
+                var ApplicatantToUpdate = await Context.Applicant
+                .FirstOrDefaultAsync(c => c.id == id);
+
+                if (await TryUpdateModelAsync<Applicant>(ApplicatantToUpdate, "", c => c.ParentFullName, c => c.ParentAddress,
+                    c => c.ParentPhoneNumber, c => c.ParentAlternatePhoneNumber, c => c.ParentEmail, c => c.ParentOccupation))
+                {
+                    try
+                    {
+                        await Context.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+
+                        //Log the error (uncomment ex variable name and write a log.)
+                        ModelState.AddModelError("", "Unable to save changes. " +
+                            "Try again, and if the problem persists, " +
+                            "see your system administrator.");
+                    }
+                    return RedirectToAction(nameof(Index));
+                }
+
+
+
+                //Context.Update(applicant);
+                //await Context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+
+            }
+            return View();
+
+        }
+
+        // GET: Applicants/Edit/File Upload Page
+        public async Task<IActionResult> Step4(int? id)
+        {
+            if (id == null || Context.Applicant == null)
+            {
+                return NotFound();
+            }
+
+            var applicant = await Context.Applicant.FindAsync(id);
+            if (applicant == null)
+            {
+                return NotFound();
+            }
+            return View(applicant);
+        }
+
+        // POST: Applicants1/Edit/File Upload Page
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Step4(int id)
+        {
+            var applicants = await Context.Applicant.FindAsync(id);
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+            applicants.UserId = UserManager.GetUserId(User);
+            try
+            {
+                var isAuthorized = await AuthorizationService.AuthorizeAsync(User, applicants, ApplicationOperations.Update);
+                if (isAuthorized.Succeeded == false)
+                    return Forbid();
+
+
+                var ApplicatantToUpdate = await Context.Applicant
+                .FirstOrDefaultAsync(c => c.id == id);
+
+                if (await TryUpdateModelAsync<Applicant>(ApplicatantToUpdate, "", c => c.Passport, c => c.Jamb,
+                    c => c.Ssce1, c => c.Ssce2, c => c.BirthCertificate, c => c.DirectEntryUpload, c => c.LGAUpload))
+                {
+                    try
+                    {
+                        await Context.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+
+                        //Log the error (uncomment ex variable name and write a log.)
+                        ModelState.AddModelError("", "Unable to save changes. " +
+                            "Try again, and if the problem persists, " +
+                            "see your system administrator.");
+                    }
+                    return RedirectToAction(nameof(Index));
+                }
+
+
+
+                //Context.Update(applicant);
+                //await Context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+
+            }
+            return View();
+
+        }
+
 
         // GET: Applicants/Delete/5
         public async Task<IActionResult> Delete(int? id)

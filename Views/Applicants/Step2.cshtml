@@ -1,7 +1,7 @@
 ﻿@model EDSU_SMS.Models.Applicant
-@using static EDSU_SMS.Models.SsceSubjects
+
 @{
-    ViewData["Title"] = "Step";
+    ViewData["Title"] = "Edit2";
 }
 
 <h1>Edit</h1>
@@ -181,14 +181,10 @@
             min-height: calc(100vh - 145px)!important;
         }
 
-    </style>
+</style>
 <div class="collapsable-menu starterkit admin-header">
     
-    <!-- BEGIN LOADER -->
-    @*<div id="load_screen"> <div class="loader"> <div class="loader-content">
-        <div class="spinner-grow align-self-center"></div>
-    </div></div></div>*@
-    <!--  END LOADER -->
+   
 
     <!--  BEGIN MAIN CONTAINER  -->
     <div class="main-container sidebar-closed sbar-open" id="container">
@@ -234,7 +230,7 @@
                 </li>
             
                 <li class="menu">
-                    <a href="starter_dashboard.html" data-active="false" class="menu-toggle">
+                    <a href="starter_dashboard.html" data-active="true" class="menu-toggle">
                         <div class="base-menu">
                             <div class="base-icons">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
@@ -245,7 +241,7 @@
                 </li>
 
                 <li class="menu">
-                    <a href="#forms" data-active="true" class="menu-toggle">
+                    <a href="#forms" data-active="false" class="menu-toggle">
                         <div class="base-menu">
                             <div class="base-icons">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
@@ -337,14 +333,69 @@
 
             <div class="submenu" id="forms">
                 <ul class="submenu-list" data-parent-element="#forms">
-                    
+                    <li>
+                        <a href="form_bootstrap_basic.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Basic </a>
+                    </li>
+                    <li>
+                        <a href="form_input_group_basic.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Input Group </a>
+                    </li>
+                    <li>
+                        <a href="form_layouts.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Layouts </a>
+                    </li>
+                    <li>
+                        <a href="form_validation.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Validation </a>
+                    </li>
+                    <li>
+                        <a href="form_input_mask.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Input Mask </a>
+                    </li>
+                    <li>
+                        <a href="form_bootstrap_select.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Bootstrap Select </a>
+                    </li>
+                    <li>
+                        <a href="form_select2.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Select2 </a>
+                    </li>
+                    <li>
+                        <a href="form_bootstrap_touchspin.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> TouchSpin </a>
+                    </li>
+                    <li>
+                        <a href="form_maxlength.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Maxlength </a>
+                    </li>
+                    <li>
+                        <a href="form_checkbox_radio.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Checkbox &amp; Radio </a>
+                    </li>
+                    <li>
+                        <a href="form_switches.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Switches </a>
+                    </li>
+                    <li>
+                        <a href="form_wizard.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Wizards </a>
+                    </li>
+                    <li>
+                        <a href="form_fileupload.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> File Upload </a>
+                    </li>
+                    <li>
+                        <a href="form_quill.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Quill Editor </a>
+                    </li>
+                    <li>
+                        <a href="form_markdown.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Markdown Editor </a>
+                    </li>
+                    <li>
+                        <a href="form_date_range_picker.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Date &amp; Range Picker </a>
+                    </li>
+                    <li>
+                        <a href="form_clipboard.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Clipboard </a>
+                    </li>
+                    <li>
+                        <a href="form_typeahead.html"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></span> Typeahead </a>
+                    </li>
                 </ul>
             </div>
+
             <div class="submenu" id="tables">
                 <ul class="submenu-list" data-parent-element="#tables">
                    
                 </ul>
             </div>
+
             <div class="submenu" id="pages">
                 <ul class="submenu-list menu-block-submenu" data-parent-element="#app"> 
                     
@@ -359,11 +410,13 @@
                     </li>
                 </ul>
             </div>
+            
         </div>
+
     </div>
     <!--  END SIDEBAR  -->
         
-    <!--  BEGIN CONTENT AREA  -->
+        <!--  BEGIN CONTENT AREA  -->
         <div id="content" class="main-content">
             <div class="layout-px-spacing">
                 
@@ -391,10 +444,11 @@
 
                                         <div class="nav-item dropdown user-profile-dropdown">
                                             <a href="#" class="nav-link dropdown-toggle user" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                                                <div class="media">
-                                                    <img src="assets/img/90x90.jpg" class="img-fluid" alt="admin-profile">
+                                               <div class="media">
+                                                    @*<img src="assets/img/90x90.jpg" class="img-fluid" alt="admin-profile">*@
                                                     <div class="media-body align-self-center">
-                                                        <h6>Alan</h6>
+                                                        <!-- Username -->
+                                                        <h6>Inu John</h6>
                                                     </div>
                                                 </div>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -430,22 +484,23 @@
                                                     </a>
                                                 </div>
                                             </div>
+                        
                                         </div>
+                                        
                                     </div>
                                 </header>
                             </div>
-                            <span class="ml-5">Choose number of SSCE sittings</span>
-                           
+
                             <div class="admin-data-content layout-top-spacing">
-                             <form class="needs-validation" novalidate  asp-action="Step">
-                                     <select asp-for="NoOfSittings" name="sscesittings" class="form-control-sm">
+                                <form class="needs-validation" novalidate  asp-action="Step2">
+                                    <select asp-for="NoOfSittings" name="sscesittings" class="form-control-sm">
                                 
                                     <option value="1" selected>1</option>
                                     <option value="2">2</option>
                                     </select>
-                                    <br />
                                     <div class="row layout-top-spacing d-flex justify-content-center">
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-6 layout-spacing">
+                                    
+                                       <div class="col-xl-6 col-lg-6 col-md-6 col-6 layout-spacing">
                                             <div class="widget-content-area br-4">
                                                 <div class="widget-one">
                                                     <div class="layout-top-spacing">
@@ -487,11 +542,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <button class="btn btn-primary" type="submit">Next</button>
+                                                </form>
                                                 <h6>Awaiting Result Candidate can now apply by selecting (AR as grade)</h6>
-                                                    <div class="form-row">
+                                                   @* <div class="form-row">
                                                         <div class="col-md-8 mb-4">
                                                            <div class="form-group">
-                                                            <select asp-for="Ssce1Subject1" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                            <select asp-for="Ssce1Subject1" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                             <option value="">Subject 1</option>
                                                             </select>
                                                             <span asp-validation-for="Ssce1Subject1" class="text-danger"></span>
@@ -500,16 +557,16 @@
                                                         </div>
                                                         <div class="col-md-4 mb-4">
                                                            
-                                                             <select asp-for="Ssce1Subject1Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                             <select asp-for="Ssce1Subject1Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                         </div>
                                                         
                                                     </div>
-                                                   <div class="form-row">
+                                                    <div class="form-row">
                                                         <div class="col-md-8 mb-4">
                                                             <div class="form-group">
-                                                               <select asp-for="Ssce1Subject2" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                               <select asp-for="Ssce1Subject2" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 2</option>
                                                                </select>
                                                                 <span asp-validation-for="Ssce1Subject2" class="text-danger"></span>
@@ -517,7 +574,7 @@
                                                         </div>
                                                         <div class="col-md-4 mb-4">
                                                             <div class="form-group">
-                                                                <select asp-for="Ssce1Subject2Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                                <select asp-for="Ssce1Subject2Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                                 <span asp-validation-for="Ssce1Subject2Grade" class="text-danger"></span>
@@ -529,7 +586,7 @@
                                                         <div class="col-md-8 mb-4">
                                                             <div class="form-group">
                                                                
-                                                               <select asp-for="Ssce1Subject3" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                               <select asp-for="Ssce1Subject3" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 3</option>
                                                                </select>
                                                                 <span asp-validation-for="Ssce1Subject3" class="text-danger"></span>
@@ -537,7 +594,7 @@
                                                         </div>
                                                         <div class="col-md-4 mb-4">
                                                             <div class="form-group">
-                                                                <select asp-for="Ssce1Subject3Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                                <select asp-for="Ssce1Subject3Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                                 <span asp-validation-for="Ssce1Subject3Grade" class="text-danger"></span>
@@ -547,7 +604,7 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                            <select asp-for="Ssce1Subject4" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                            <select asp-for="Ssce1Subject4" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 4</option>
                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -556,7 +613,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                           <select asp-for="Ssce1Subject4Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                           <select asp-for="Ssce1Subject4Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -568,7 +625,7 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                           <select asp-for="Ssce1Subject5" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                           <select asp-for="Ssce1Subject5" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 5</option>
                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -577,7 +634,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                           <select asp-for="Ssce1Subject5Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                           <select asp-for="Ssce1Subject5Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -589,7 +646,7 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                           <select asp-for="Ssce1Subject6" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                           <select asp-for="Ssce1Subject6" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 6</option>
                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -598,7 +655,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                            <select asp-for="Ssce1Subject6Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                            <select asp-for="Ssce1Subject6Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -610,7 +667,7 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                           <select asp-for="Ssce1Subject7" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                           <select asp-for="Ssce1Subject7" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 7</option>
                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -619,7 +676,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                           <select asp-for="Ssce1Subject7Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                           <select asp-for="Ssce1Subject7Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -631,7 +688,7 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                           <select asp-for="Ssce1Subject8" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                           <select asp-for="Ssce1Subject8" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 8</option>
                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -640,7 +697,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                           <select asp-for="Ssce1Subject8Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                           <select asp-for="Ssce1Subject8Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -652,7 +709,7 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                            <select asp-for="Ssce1Subject9" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                            <select asp-for="Ssce1Subject9" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 9</option>
                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -661,7 +718,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                            <select asp-for="Ssce1Subject9Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                            <select asp-for="Ssce1Subject9Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -670,12 +727,11 @@
                                                             </div>
                                                         </div>
                                                         
-                                                    </div>
+                                                    </div>*@
                                             </div>
-                                            <button class="btn btn-primary mt-3" type="submit">Next</button>
-                                        </div>
-
-                                       @* <div id="SecondSitingSsce"  style="display: none;" class="col-xl-6 col-lg-6 col-md-6 col-6 layout-spacing">
+                                        
+                                          </div>  
+                                            @*<div id="SecondSitingSsce"  style="display:none" class="col-xl-6 col-lg-6 col-md-6 col-6 layout-spacing">
                                             <div class="widget-content-area br-4">
                                                 <div class="widget-one">
                                                     <div class="layout-top-spacing">
@@ -721,7 +777,7 @@
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
                                                             <div class="form-group">
-                                                                <select asp-for="Ssce2Subject1" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                                <select asp-for="Ssce2Subject1" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 1</option>
                                                                 </select>
                                                                 <span asp-validation-for="Ssce2Subject1" class="text-danger"></span>
@@ -729,7 +785,7 @@
                                                         </div>
                                                         <div class="col-md-4 mb-4">
                                                             
-                                                             <select asp-for="Ssce2Subject1Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                             <select asp-for="Ssce2Subject1Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                         </div>
@@ -738,7 +794,7 @@
                                                    <div class="form-row">
                                                         <div class="col-md-8 mb-4">
                                                             <div class="form-group">
-                                                               <select asp-for="Ssce2Subject2" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                               <select asp-for="Ssce2Subject2" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 2</option>
                                                                </select>
                                                                 <span asp-validation-for="Ssce2Subject2" class="text-danger"></span>
@@ -746,7 +802,7 @@
                                                         </div>
                                                         <div class="col-md-4 mb-4">
                                                             <div class="form-group">
-                                                                <select asp-for="Ssce2Subject2Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                                <select asp-for="Ssce2Subject2Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                                 <span asp-validation-for="Ssce2Subject2Grade" class="text-danger"></span>
@@ -758,7 +814,7 @@
                                                         <div class="col-md-8 mb-4">
                                                             <div class="form-group">
                                                                
-                                                               <select asp-for="Ssce2Subject3" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                               <select asp-for="Ssce2Subject3" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 3</option>
                                                                </select>
                                                                 <span asp-validation-for="Ssce2Subject3" class="text-danger"></span>
@@ -766,7 +822,7 @@
                                                         </div>
                                                         <div class="col-md-4 mb-4">
                                                             <div class="form-group">
-                                                                <select asp-for="Ssce2Subject3Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                                <select asp-for="Ssce2Subject3Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                                 <span asp-validation-for="Ssce2Subject3Grade" class="text-danger"></span>
@@ -776,7 +832,7 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                            <select asp-for="Ssce2Subject4" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                            <select asp-for="Ssce2Subject4" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 4</option>
                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -785,7 +841,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                           <select asp-for="Ssce2Subject4Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                           <select asp-for="Ssce2Subject4Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -797,7 +853,7 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                           <select asp-for="Ssce2Subject5" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                           <select asp-for="Ssce2Subject5" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 5</option>
                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -806,7 +862,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                           <select asp-for="Ssce2Subject5Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                           <select asp-for="Ssce2Subject5Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -818,7 +874,7 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                           <select asp-for="Ssce2Subject6" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                           <select asp-for="Ssce2Subject6" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 6</option>
                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -827,7 +883,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                            <select asp-for="Ssce2Subject6Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                            <select asp-for="Ssce2Subject6Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -839,7 +895,7 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                           <select asp-for="Ssce2Subject7" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                           <select asp-for="Ssce2Subject7" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 7</option>
                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -848,7 +904,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                           <select asp-for="Ssce2Subject7Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                           <select asp-for="Ssce2Subject7Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -860,7 +916,7 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                           <select asp-for="Ssce2Subject8" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                           <select asp-for="Ssce2Subject8" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 8</option>
                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -869,7 +925,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                           <select asp-for="Ssce2Subject8Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                           <select asp-for="Ssce2Subject8Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -881,7 +937,7 @@
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="col-md-8 mb-4">
-                                                            <select asp-for="Ssce2Subject9" class="form-control" asp-items="@(new SelectList(ViewBag.message1, "Id", "SubjectName"))">
+                                                            <select asp-for="Ssce2Subject9" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
                                                                 <option value="">Subject 9</option>
                                                                </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -890,7 +946,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 mb-4">
-                                                            <select asp-for="Ssce2Subject9Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message2, "Id", "Grade"))">
+                                                            <select asp-for="Ssce2Subject9Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
                                                                 <option value="">Grade</option>
                                                                 </select>
                                                             <div class="valid-feedback">Example valid custom select feedback</div>
@@ -900,15 +956,15 @@
                                                         </div>
                                                         
                                                     </div>
-                                            </div>
-                                        </div>*@ 
-                                        
+                                                </div>
+                                            </div>*@
+                                           
                                     </div>
-                                   
-                                </form>
+                                     <button type="submit">Next</button>
+                                
                                 
                             </div>
-                           
+                            
                         </div>
                     </div>
 
@@ -918,9 +974,9 @@
         </div>
         <!--  END CONTENT AREA  -->
     </div>
-    
-    
-    <script>
+    <!-- END MAIN CONTAINER -->
+
+     <script>
         $(document).ready(function() {
             App.init();
         });
@@ -944,62 +1000,4 @@
 
             });
             </script>
-    <!-- END GLOBAL MANDATORY SCRIPTS -->
-
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 </div>
-
-
-
-
-
-
-@*<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="id" />
-           
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="OtherName" class="control-label"></label>
-                <input asp-for="OtherName" class="form-control" />
-                <span asp-validation-for="OtherName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
-            <br />
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>*@
-@*
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>*@
-@*
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
-*@

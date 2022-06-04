@@ -184,12 +184,6 @@
     </style>
 <div class="collapsable-menu starterkit admin-header">
     
-    <!-- BEGIN LOADER -->
-    <div id="load_screen"> <div class="loader"> <div class="loader-content">
-        <div class="spinner-grow align-self-center"></div>
-    </div></div></div>
-    <!--  END LOADER -->
-
     <!--  BEGIN MAIN CONTAINER  -->
     <div class="main-container sidebar-closed sbar-open" id="container">
 
@@ -451,10 +445,10 @@
                                         <div class="nav-item dropdown user-profile-dropdown">
                                             <a href="#" class="nav-link dropdown-toggle user" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
                                                 <div class="media">
-                                                    <img src="assets/img/90x90.jpg" class="img-fluid" alt="admin-profile">
+                                                    @*<img src="assets/img/90x90.jpg" class="img-fluid" alt="admin-profile">*@
                                                     <div class="media-body align-self-center">
                                                         <!-- Username -->
-                                                        <h6>John</h6>
+                                                        <h6>Inu John</h6>
                                                     </div>
                                                 </div>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -501,64 +495,73 @@
                             <div class="admin-data-content layout-top-spacing">
 
                                 <div class="row layout-top-spacing">
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-6 layout-spacing">
+                                    <div class="col-xl-8 col-lg-8 col-md-8 col-8 layout-spacing">
                                         <div class="widget-content-area br-4">
                                             <div class="widget-one">
-                                                <form class="needs-validation" novalidate action="javascript:void(0);">
-                                                    <div class="form-row">
-                                                        <div class="col-md-12 mb-4">
-                                                            <label for="validationCustom01">PASSPORT PHOTOGRAPH UPLOAD</label>
-                                                            <input type="file" class="form-control" id="validationCustom01" placeholder="" value=""  name="" required>
-                                                            <div class="valid-feedback">
-                                                                Looks good!
+                                                <form class="needs-validation" novalidate  asp-action="Step4">
+                                                     <div class="form-row">
+                                                            <div class="col-md-12 mb-4">
+                                                               <div class="form-group">
+                                                                <label asp-for="Passport" class="control-label">PASSPORT PHOTOGRAPH UPLOAD</label>
+                                                                <input asp-for="Passport" type="file" class="form-control"/>
+                                                                <span asp-validation-for="Passport" class="text-danger"></span>
+                                                            </div>
                                                             </div>
                                                         </div>
-                                                        
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col-md-12 mb-4">
-                                                            <label for="validationCustom01">JAMB PRINTOUT UPLOAD
-                                                            </label>
-                                                            <input type="file" class="form-control" id="validationCustom01" placeholder="" value="" name="" required>
-                                                            <div class="valid-feedback">
-                                                                Looks good!
+                                                     <div class="form-row">
+                                                            <div class="col-md-12 mb-4">
+                                                               <div class="form-group">
+                                                                <label asp-for="Jamb" class="control-label">JAMB PRINTOUT UPLOAD</label>
+                                                                <input asp-for="Jamb" type="file"  class="form-control"/>
+                                                                <span asp-validation-for="Jamb" class="text-danger"></span>
+                                                            </div>
                                                             </div>
                                                         </div>
-                                                        
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col-md-12 mb-4">
-                                                            <label for="validationCustom01">SSCE CERTIFICATE
-                                                            </label>
-                                                            <input type="file" class="form-control" id="validationCustom01" placeholder="" value="" name="" required>
-                                                            <div class="valid-feedback">
-                                                                Looks good!
+                                                     <div class="form-row">
+                                                            <div class="col-md-12 mb-4">
+                                                               <div class="form-group">
+                                                                   <label asp-for="Ssce1" class="control-label">SSCE CERTIFICATE</label>
+                                                                <input asp-for="Ssce1" type="file"  class="form-control"/>
+                                                                <span asp-validation-for="Ssce1" class="text-danger"></span>
+                                                            </div>
                                                             </div>
                                                         </div>
-                                                        
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col-md-12 mb-4">
-                                                            <label for="validationCustom01">SSCE CERTIFICATE "2" (If you have more than one sittings)
-                                                            </label>
-                                                            <input type="file" class="form-control" id="validationCustom01" placeholder="" value="" name="" required>
-                                                            <div class="valid-feedback">
-                                                                Looks good!
+                                                     <div class="form-row">
+                                                            <div class="col-md-12 mb-4">
+                                                               <div class="form-group">
+                                                                   <label asp-for="Ssce2" class="control-label">SSCE CERTIFICATE "2" <i style="color:red">(If you have more than one sittings)</i></label>
+                                                                <input asp-for="Ssce2" type="file"  class="form-control"/>
+                                                                <span asp-validation-for="Ssce2" class="text-danger"></span>
+                                                            </div>
                                                             </div>
                                                         </div>
-                                                        
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="col-md-12 mb-4">
-                                                            <label for="validationCustom01">BIRTH CERTIFICATE </label>
-                                                            <input type="file" class="form-control" id="validationCustom01" placeholder="" value="" name="" required>
-                                                            <div class="valid-feedback">
-                                                                Looks good!
+                                                     <div class="form-row">
+                                                            <div class="col-md-12 mb-4">
+                                                               <div class="form-group">
+                                                                <label asp-for="BirthCertificate" class="control-label">BIRTH CERTIFICATE</label>
+                                                                <input asp-for="BirthCertificate" type="file"  class="form-control"/>
+                                                                <span asp-validation-for="BirthCertificate" class="text-danger"></span>
+                                                            </div>
                                                             </div>
                                                         </div>
-                                                        
-                                                    </div>
-                                                   
+                                                   <div class="form-row">
+                                                            <div class="col-md-12 mb-4">
+                                                               <div class="form-group">
+                                                                 <label asp-for="BirthCertificate" class="control-label">DIRECT ENTRY UPLOAD <i style="color:red">(For Direct Entry students Only)</i></label>
+                                                                <input asp-for="DirectEntryUpload" type="file"  class="form-control"/>
+                                                                <span asp-validation-for="DirectEntryUpload" class="text-danger"></span>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                     <div class="form-row">
+                                                            <div class="col-md-12 mb-4">
+                                                               <div class="form-group">
+                                                                <label asp-for="LGAUpload" class="control-label">LGA UPLOAD</label>
+                                                                <input asp-for="LGAUpload" type="file"  class="form-control"/>
+                                                                <span asp-validation-for="LGAUpload" class="text-danger"></span>
+                                                            </div>
+                                                            </div>
+                                                        </div>
                                                     <button class="btn btn-primary mt-3" type="submit">Submit Application</button>
                                                 </form>
                                             </div>

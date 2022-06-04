@@ -61,7 +61,7 @@ namespace EDSU_SMS.Models
         /// </summary>
         public int NoOfSittings { get; set; }
         public string? Ssce1Type { get; set; }
-        public DateTime Ssce1Year { get; set; }
+        public string? Ssce1Year { get; set; }
         public string? Ssce1Number { get; set; }
         public string? Ssce1Subject1 { get; set; }
         public string? Ssce1Subject2 { get; set; }
@@ -85,7 +85,7 @@ namespace EDSU_SMS.Models
         public int Ssce1Subject9Grade { get; set; }
 
         public string? Ssce2Type { get; set; }
-        public DateTime Ssce2Year { get; set; }
+        public string? Ssce2Year { get; set; }
         public string? Ssce2Number { get; set; }
         public string? Ssce2Subject1 { get; set; }
         public string? Ssce2Subject2 { get; set; }
