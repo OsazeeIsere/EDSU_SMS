@@ -156,7 +156,7 @@ namespace EDSU_SMS.Controllers
 
             Context.Applicant.Add(applicant);
             await Context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Edit));
             
               //return View(applicant);
         }
@@ -226,12 +226,11 @@ namespace EDSU_SMS.Controllers
                     catch (DbUpdateConcurrencyException)
                     {
 
-                        //Log the error (uncomment ex variable name and write a log.)
                         ModelState.AddModelError("", "Unable to save changes. " +
                             "Try again, and if the problem persists, " +
                             "see your system administrator.");
                     }
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(Step33));
                 }
 
 
@@ -308,7 +307,7 @@ namespace EDSU_SMS.Controllers
                     c => c.Ssce1Subject4Grade, c => c.Ssce1Subject5, c => c.Ssce1Subject5Grade, c => c.Ssce1Subject6,
                     c => c.Ssce1Subject6Grade, c => c.Ssce1Subject7, c => c.Ssce1Subject7Grade, c => c.Ssce1Subject8,
                     c => c.Ssce1Subject8Grade, c => c.Ssce1Subject9, c => c.Ssce1Subject9Grade, c => c.Ssce2Type,
-                    c => c.Ssce2Year, c => c.Ssce2Number, c => c.Ssce2Subject1, c => c.Ssce2Subject1Grade, c => c.Ssce2Subject2,
+                    c => c.Ssce2Year,          c => c.Ssce2Number,   c => c.Ssce2Subject1,      c => c.Ssce2Subject1Grade, c => c.Ssce2Subject2,
                     c => c.Ssce2Subject2Grade, c => c.Ssce2Subject3, c => c.Ssce2Subject3Grade, c => c.Ssce2Subject4,
                     c => c.Ssce2Subject4Grade, c => c.Ssce2Subject5, c => c.Ssce2Subject5Grade, c => c.Ssce2Subject6,
                     c => c.Ssce2Subject6Grade, c => c.Ssce2Subject7, c => c.Ssce2Subject7Grade, c => c.Ssce2Subject8,
@@ -326,7 +325,7 @@ namespace EDSU_SMS.Controllers
                             "Try again, and if the problem persists, " +
                             "see your system administrator.");
                     }
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(Step3));
                 }
 
 
@@ -398,10 +397,8 @@ namespace EDSU_SMS.Controllers
                             "Try again, and if the problem persists, " +
                             "see your system administrator.");
                     }
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(Step4));
                 }
-
-
 
                 //Context.Update(applicant);
                 //await Context.SaveChangesAsync();
@@ -473,8 +470,6 @@ namespace EDSU_SMS.Controllers
                     return RedirectToAction(nameof(Index));
                 }
 
-
-
                 //Context.Update(applicant);
                 //await Context.SaveChangesAsync();
             }
@@ -486,7 +481,6 @@ namespace EDSU_SMS.Controllers
             return View();
 
         }
-
 
         // GET: Applicants/Delete/5
         public async Task<IActionResult> Delete(int? id)
