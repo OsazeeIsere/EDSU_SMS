@@ -17,6 +17,7 @@ namespace EDSU_SMS.Data
         public DbSet<EDSU_SMS.Models.Course> Courses { get; set; }
         public DbSet<EDSU_SMS.Models.SsceSubjects>? SsceSubjects { get; set; }
         public DbSet<EDSU_SMS.Models.SSCEGrade>? SSCEGrade { get; set; }
+        public DbSet<EDSU_SMS.Models.Transcripts>? Transcripts { get; set; }
 
     }
 }

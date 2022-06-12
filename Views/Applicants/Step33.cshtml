@@ -443,7 +443,7 @@
                                                 @*<img src="assets/img/90x90.jpg" class="img-fluid" alt="admin-profile">*@
                                                 <div class="media-body align-self-center">
                                                     <!-- Username -->
-                                                    <h6>Inu John</h6>
+                                                    <h6>@User.Identity?.Name!</h6>
                                                 </div>
                                             </div>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -502,7 +502,7 @@
                                                         <div class="col-md-12 mb-4">
                                                             <div class="form-group">
                                                                 <select asp-for="Ssce1Type" class="form-control">
-                                                                    <option value="">Type of SSCE</option>
+                                                                    <option value="null">Type of SSCE</option>
                                                                     <option value="WAEC">WAEC</option>
                                                                     <option value="NECO">NECO</option>
                                                                     <option value="GCE">GCE</option>
@@ -515,7 +515,7 @@
                                                         <div class="col-md-12 mb-4">
                                                             <div class="form-group">
                                                                 <select asp-for="Ssce1Year" class="form-control">
-                                                                    <option value="">Year of exams</option>
+                                                                    <option value="null">Year of exams</option>
                                                                     <option value="2022">2022</option>
                                                                     <option value="2021">2021</option>
                                                                     <option value="2020">2020</option>
@@ -540,7 +540,7 @@
                                                     <div class="col-md-8 mb-4">
                                                         <div class="form-group">
                                                         <select asp-for="Ssce1Subject1" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                        <option value="">Subject 1</option>
+                                                        <option value="null">Subject 1</option>
                                                         </select>
                                                         <span asp-validation-for="Ssce1Subject1" class="text-danger"></span>
                                                         </div>
@@ -549,7 +549,7 @@
                                                     <div class="col-md-4 mb-4">
                                                            
                                                             <select asp-for="Ssce1Subject1Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                     </div>
                                                         
@@ -558,7 +558,7 @@
                                                     <div class="col-md-8 mb-4">
                                                         <div class="form-group">
                                                             <select asp-for="Ssce1Subject2" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 2</option>
+                                                            <option value="null">Subject 2</option>
                                                             </select>
                                                             <span asp-validation-for="Ssce1Subject2" class="text-danger"></span>
                                                         </div>
@@ -566,7 +566,7 @@
                                                     <div class="col-md-4 mb-4">
                                                         <div class="form-group">
                                                             <select asp-for="Ssce1Subject2Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                             <span asp-validation-for="Ssce1Subject2Grade" class="text-danger"></span>
                                                         </div>
@@ -578,7 +578,7 @@
                                                         <div class="form-group">
                                                                
                                                             <select asp-for="Ssce1Subject3" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 3</option>
+                                                            <option value="null">Subject 3</option>
                                                             </select>
                                                             <span asp-validation-for="Ssce1Subject3" class="text-danger"></span>
                                                         </div>
@@ -586,7 +586,7 @@
                                                     <div class="col-md-4 mb-4">
                                                         <div class="form-group">
                                                             <select asp-for="Ssce1Subject3Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                             <span asp-validation-for="Ssce1Subject3Grade" class="text-danger"></span>
                                                         </div>
@@ -596,7 +596,7 @@
                                                 <div class="form-row">
                                                     <div class="col-md-8 mb-4">
                                                         <select asp-for="Ssce1Subject4" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 4</option>
+                                                            <option value="null">Subject 4</option>
                                                             </select>
                                                         <div class="valid-feedback">Example valid custom select feedback</div>
                                                         <div class="invalid-feedback">
@@ -605,7 +605,7 @@
                                                     </div>
                                                     <div class="col-md-4 mb-4">
                                                         <select asp-for="Ssce1Subject4Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                         <div class="valid-feedback">Example valid custom select feedback</div>
                                                         <div class="invalid-feedback">
@@ -617,7 +617,7 @@
                                                 <div class="form-row">
                                                     <div class="col-md-8 mb-4">
                                                         <select asp-for="Ssce1Subject5" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 5</option>
+                                                            <option value="null">Subject 5</option>
                                                             </select>
                                                         <div class="valid-feedback">Example valid custom select feedback</div>
                                                         <div class="invalid-feedback">
@@ -626,7 +626,7 @@
                                                     </div>
                                                     <div class="col-md-4 mb-4">
                                                         <select asp-for="Ssce1Subject5Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                         <div class="valid-feedback">Example valid custom select feedback</div>
                                                         <div class="invalid-feedback">
@@ -638,7 +638,7 @@
                                                 <div class="form-row">
                                                     <div class="col-md-8 mb-4">
                                                         <select asp-for="Ssce1Subject6" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 6</option>
+                                                            <option value="null">Subject 6</option>
                                                             </select>
                                                         <div class="valid-feedback">Example valid custom select feedback</div>
                                                         <div class="invalid-feedback">
@@ -647,7 +647,7 @@
                                                     </div>
                                                     <div class="col-md-4 mb-4">
                                                         <select asp-for="Ssce1Subject6Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                         <div class="valid-feedback">Example valid custom select feedback</div>
                                                         <div class="invalid-feedback">
@@ -659,7 +659,7 @@
                                                 <div class="form-row">
                                                     <div class="col-md-8 mb-4">
                                                         <select asp-for="Ssce1Subject7" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 7</option>
+                                                            <option value="null">Subject 7</option>
                                                             </select>
                                                         <div class="valid-feedback">Example valid custom select feedback</div>
                                                         <div class="invalid-feedback">
@@ -668,7 +668,7 @@
                                                     </div>
                                                     <div class="col-md-4 mb-4">
                                                         <select asp-for="Ssce1Subject7Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                         <div class="valid-feedback">Example valid custom select feedback</div>
                                                         <div class="invalid-feedback">
@@ -680,7 +680,7 @@
                                                 <div class="form-row">
                                                     <div class="col-md-8 mb-4">
                                                         <select asp-for="Ssce1Subject8" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 8</option>
+                                                            <option value="null">Subject 8</option>
                                                             </select>
                                                         <div class="valid-feedback">Example valid custom select feedback</div>
                                                         <div class="invalid-feedback">
@@ -689,7 +689,7 @@
                                                     </div>
                                                     <div class="col-md-4 mb-4">
                                                         <select asp-for="Ssce1Subject8Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                         <div class="valid-feedback">Example valid custom select feedback</div>
                                                         <div class="invalid-feedback">
@@ -701,7 +701,7 @@
                                                 <div class="form-row">
                                                     <div class="col-md-8 mb-4">
                                                         <select asp-for="Ssce1Subject9" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 9</option>
+                                                            <option value="null">Subject 9</option>
                                                             </select>
                                                         <div class="valid-feedback">Example valid custom select feedback</div>
                                                         <div class="invalid-feedback">
@@ -710,7 +710,7 @@
                                                     </div>
                                                     <div class="col-md-4 mb-4">
                                                         <select asp-for="Ssce1Subject9Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                         <div class="valid-feedback">Example valid custom select feedback</div>
                                                         <div class="invalid-feedback">
@@ -729,7 +729,7 @@
                                                         <div class="col-md-12 mb-4">
                                                             <div class="form-group">
                                                                 <select asp-for="Ssce2Type" class="form-control">
-                                                                    <option value="">Type of SSCE</option>
+                                                                    <option value="null">Type of SSCE</option>
                                                                     <option value="WAEC">WAEC</option>
                                                                     <option value="NECO">NECO</option>
                                                                     <option value="GCE">GCE</option>
@@ -742,12 +742,12 @@
                                                         <div class="col-md-12 mb-4">
                                                             <div class="form-group">
                                                                 <select asp-for="Ssce2Year" class="form-control">
-                                                                    <option value="">Year of exams</option>
+                                                                    <option value="null">Year of exams</option>
                                                                     <option value="2022">2022</option>
                                                                     <option value="2021">2021</option>
                                                                     <option value="2020">2020</option>
                                                                 </select>
-                                                                <span asp-validation-for="Ssce1Year" class="text-danger"></span>
+                                                                <span asp-validation-for="Ssce2Year" class="text-danger"></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -767,7 +767,7 @@
                                                     <div class="col-md-8 mb-4">
                                                         <div class="form-group">
                                                         <select asp-for="Ssce2Subject1" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                        <option value="">Subject 1</option>
+                                                        <option value="null">Subject 1</option>
                                                         </select>
                                                         <span asp-validation-for="Ssce2Subject1" class="text-danger"></span>
                                                         </div>
@@ -776,7 +776,7 @@
                                                     <div class="col-md-4 mb-4">
                                                            
                                                             <select asp-for="Ssce2Subject1Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                     </div>
                                                         
@@ -785,7 +785,7 @@
                                                     <div class="col-md-8 mb-4">
                                                         <div class="form-group">
                                                             <select asp-for="Ssce2Subject2" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 2</option>
+                                                            <option value="null">Subject 2</option>
                                                             </select>
                                                             <span asp-validation-for="Ssce2Subject2" class="text-danger"></span>
                                                         </div>
@@ -793,7 +793,7 @@
                                                     <div class="col-md-4 mb-4">
                                                         <div class="form-group">
                                                             <select asp-for="Ssce2Subject2Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                             <span asp-validation-for="Ssce2Subject2Grade" class="text-danger"></span>
                                                         </div>
@@ -805,7 +805,7 @@
                                                         <div class="form-group">
                                                                
                                                             <select asp-for="Ssce2Subject3" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 3</option>
+                                                            <option value="null">Subject 3</option>
                                                             </select>
                                                             <span asp-validation-for="Ssce2Subject3" class="text-danger"></span>
                                                         </div>
@@ -813,7 +813,7 @@
                                                     <div class="col-md-4 mb-4">
                                                         <div class="form-group">
                                                             <select asp-for="Ssce2Subject3Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                             <span asp-validation-for="Ssce2Subject3Grade" class="text-danger"></span>
                                                         </div>
@@ -823,13 +823,13 @@
                                                 <div class="form-row">
                                                     <div class="col-md-8 mb-4">
                                                         <select asp-for="Ssce2Subject4" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 4</option>
+                                                            <option value="null">Subject 4</option>
                                                             </select>
                                                         <span asp-validation-for="Ssce2Subject4" class="text-danger"></span>
                                                     </div>
                                                     <div class="col-md-4 mb-4">
                                                         <select asp-for="Ssce2Subject4Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                         <span asp-validation-for="Ssce2Subject4Grade" class="text-danger"></span>
                                                     </div>
@@ -838,13 +838,13 @@
                                                 <div class="form-row">
                                                     <div class="col-md-8 mb-4">
                                                         <select asp-for="Ssce2Subject5" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 5</option>
+                                                            <option value="null">Subject 5</option>
                                                             </select>
                                                         <span asp-validation-for="Ssce2Subject5" class="text-danger"></span>
                                                     </div>
                                                     <div class="col-md-4 mb-4">
                                                         <select asp-for="Ssce2Subject5Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                         <span asp-validation-for="Ssce2Subject5Grade" class="text-danger"></span>
                                                     </div>
@@ -853,13 +853,13 @@
                                                 <div class="form-row">
                                                     <div class="col-md-8 mb-4">
                                                         <select asp-for="Ssce2Subject6" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 6</option>
+                                                            <option value="null">Subject 6</option>
                                                             </select>
                                                         <span asp-validation-for="Ssce2Subject6" class="text-danger"></span>
                                                     </div>
                                                     <div class="col-md-4 mb-4">
                                                         <select asp-for="Ssce2Subject6Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                         <span asp-validation-for="Ssce2Subject6Grade" class="text-danger"></span>
                                                     </div>
@@ -868,13 +868,13 @@
                                                 <div class="form-row">
                                                     <div class="col-md-8 mb-4">
                                                         <select asp-for="Ssce2Subject7" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 7</option>
+                                                            <option value="null">Subject 7</option>
                                                             </select>
                                                         <span asp-validation-for="Ssce2Subject7" class="text-danger"></span>
                                                     </div>
                                                     <div class="col-md-4 mb-4">
                                                         <select asp-for="Ssce2Subject7Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                         <span asp-validation-for="Ssce2Subject7Grade" class="text-danger"></span>
                                                     </div>
@@ -883,13 +883,13 @@
                                                 <div class="form-row">
                                                     <div class="col-md-8 mb-4">
                                                         <select asp-for="Ssce2Subject8" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 8</option>
+                                                            <option value="null">Subject 8</option>
                                                             </select>
                                                         <span asp-validation-for="Ssce2Subject8" class="text-danger"></span>
                                                     </div>
                                                     <div class="col-md-4 mb-4">
-                                                        <select asp-for="Ssce1Subject8Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                        <select asp-for="Ssce2Subject8Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                         <span asp-validation-for="Ssce2Subject8Grade" class="text-danger"></span>
                                                     </div>
@@ -898,13 +898,13 @@
                                                 <div class="form-row">
                                                     <div class="col-md-8 mb-4">
                                                         <select asp-for="Ssce2Subject9" class="form-control" asp-items="@(new SelectList(ViewBag.message3, "Id", "SubjectName"))">
-                                                            <option value="">Subject 9</option>
+                                                            <option value="null">Subject 9</option>
                                                             </select>
                                                         <span asp-validation-for="Ssce2Subject9" class="text-danger"></span>
                                                     </div>
                                                     <div class="col-md-4 mb-4">
-                                                        <select asp-for="Ssce1Subject9Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
-                                                            <option value="">Grade</option>
+                                                        <select asp-for="Ssce2Subject9Grade" class="form-control" asp-items="@(new SelectList(ViewBag.message4, "Id", "Grade"))">
+                                                            <option value="0">Grade</option>
                                                             </select>
                                                         <span asp-validation-for="Ssce2Subject9Grade" class="text-danger"></span>
                                                     </div>

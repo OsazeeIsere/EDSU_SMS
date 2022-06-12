@@ -230,7 +230,7 @@ namespace EDSU_SMS.Controllers
                             "Try again, and if the problem persists, " +
                             "see your system administrator.");
                     }
-                    return RedirectToAction(nameof(Step33));
+                    return RedirectToAction("Step33", "Applicants", new { id });
                 }
 
 
@@ -325,7 +325,7 @@ namespace EDSU_SMS.Controllers
                             "Try again, and if the problem persists, " +
                             "see your system administrator.");
                     }
-                    return RedirectToAction(nameof(Step3));
+                    return RedirectToAction("Step3", "Applicants", new { id });
                 }
 
 

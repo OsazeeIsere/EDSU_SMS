@@ -8,5 +8,13 @@
             Approved,
             Declined
         }
+        public enum Title
+        {
+            Mr ,
+            //Mrs = "Mrs",
+            //Ms = "Ms",
+            //Dr = "Dr",
+            //Prof = "Prof"
+        }
     }
 }
